@@ -45,9 +45,10 @@ function main() {
    
  var adgroupIterator = AdWordsApp.adGroups()
   //.withCondition("LabelNames CONTAINS_ANY ['Label_Name']")  
+  .withCondition("CampaignStatus=ENABLED") 
   .withCondition("Status=ENABLED")
-  .orderBy("CampaignName")
   .orderBy("CampaignType")
+  .orderBy("CampaignName")
   .get();
  
   var one = getDateStringInPast(1);
